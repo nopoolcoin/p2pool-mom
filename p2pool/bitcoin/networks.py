@@ -26,7 +26,7 @@ nets = dict(
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
         SUBSIDY_FUNC=lambda height: 50*2100000 >> (height + 1)//21000, # Memorycoin has a 50% decline every 21000 blocks
-        POW_FUNC==lambda data: pack.IntType(256).unpack(__import__('memorycoin_momentum').getPoWHash(data)),
+        POW_FUNC==lambda data: pack.IntType(256).unpack(__import__('nopoolcoin_momentum').getPoWHash(data)),
         BLOCK_PERIOD=120, # s
         SYMBOL='NPC',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'nopoolcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/nopoolcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.nopoolcoin'), 'nopoolcoin.conf'),

@@ -12,9 +12,9 @@ import traceback
 import urlparse
 
 try:
-    import memorycoin_momentum
+    import nopoolcoin_momentum
 except ImportError:
-    sys.exit("Error: Memorycoin Momentum checking is not installed. Simply enter the memorycoin_momentum directory and try 'sudo python setup.py build'")
+    sys.exit("Error: nopoolcoin Momentum checking is not installed. Simply enter the nopoolcoin_momentum directory and try 'sudo python setup.py build'")
 
 if '--iocp' in sys.argv:
     from twisted.internet import iocpreactor
